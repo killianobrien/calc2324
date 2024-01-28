@@ -15,8 +15,8 @@
   
   button {
     font-family: 'IBM Plex Sans', sans-serif;
-    border: none;
-    outline: 0;
+    border: 1;
+    /* outline: 2; */
     display: inline-block;
     padding: 4px;
     color: black;
