@@ -1,6 +1,6 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    max-width: 250px;
     margin: auto;
     text-align: center;
     font-family: 'Noto Serif', serif;
@@ -24,7 +24,7 @@
     text-align: center;
     cursor: pointer;
     width: 100%;
-    font-size: 14px;
+    font-size: 12px;
   }
   
   a {
