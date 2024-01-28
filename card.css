@@ -3,7 +3,7 @@
     max-width: 250px;
     margin: auto;
     text-align: center;
-    font-family: 'Noto Serif', serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 12px;
     /* float:right; */
   }
@@ -14,7 +14,7 @@
   }
   
   button {
-    font-family: 'Noto Serif', serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     border: none;
     outline: 0;
     display: inline-block;
