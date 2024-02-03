@@ -213,7 +213,8 @@
 towards the end of the 2004 film <a
 href="https://www.imdb.com/title/tt0377092/">Mean Girls</a>, an American
 High School comedy.</p>
-<p>I haven’t seen the film, but looked up the relevant scene.</p>
+<p>I haven’t seen the film, but looked up the math competition
+scene.</p>
 <figure>
 <img src="meangirls.png" alt="What is the limit?" />
 <figcaption aria-hidden="true">What is the limit?</figcaption>
@@ -222,7 +223,67 @@ High School comedy.</p>
 type-set (functions names <span class="math inline">\(\sin\)</span>,
 <span class="math inline">\(\ln\)</span>, etc should be in normal
 upright font, not <em>italics</em>).</p>
-<p>Here’s the limit <span class="math display">\[\lim_{x \to 0}
-\frac{\ln(1-x) - \sin(x)}{1- \cos^2(x)}.\]</span></p>
+<p>Here’s the limit <span class="math display">\[\lim_{x \to 0}\left (
+\frac{\ln(1-x) - \sin(x)}{1- \cos^2(x)}\right ).\]</span></p>
+<p>The way to deal with the limit is not so much to start applying the
+<span class="math inline">\(\epsilon, \delta\)</span> definition
+directly, as this is a complicated compound function and the interplay
+between <span class="math inline">\(\epsilon\)</span> and <span
+class="math inline">\(\delta\)</span> values will be quite tricky to
+handle.</p>
+<p>Instead we would treat this problem with the aid of the theory of
+limits of compound functions, the derivative and in particular
+l’Hôpital’s rule.</p>
+<p>l’Hôpital’s rule is useful in situations where we have two functions
+<span class="math inline">\(f(x)\)</span> and <span
+class="math inline">\(g(x)\)</span> and <span
+class="math inline">\(f(0)=g(0)=0\)</span>, so that we cannot judge
+<span class="math inline">\(\lim_{x \to 0}f(x)/g(x)\)</span> by using a
+quotient rule for limits as the limit would seemingly be <span
+class="math inline">\(0/0\)</span>, which is meaningless. The rule says
+that we can judge the limit of their quotient by examining the limit of
+the quotient of their derivatives, i.e. <span
+class="math display">\[\lim_{x \to 0} \frac{f(x)}{g(x)}
+= \lim_{x \to 0} \frac{f&#39;(x)}{g&#39;(x)},\]</span> where <span
+class="math inline">\(f&#39;\)</span> and <span
+class="math inline">\(g&#39;\)</span> denote the derivatives.</p>
+<p>Applying this result here will say <span
+class="math display">\[\begin{align*}
+\lim_{x \to 0} \left ( \frac{\ln(1-x) - \sin(x)}{1- \cos^2(x)} \right )
+&amp;= \lim_{x \to 0} \left ( \frac{\frac{-1}{1-x} -
+\cos(x)}{-2\cos(x)\sin(x)}\right )
+\end{align*}\]</span></p>
+<p>Now in the quotient on the right-hand side, the numerator evaluates
+to <span class="math inline">\(-2\)</span> at <span
+class="math inline">\(x=0\)</span> and the denominator evaluates to
+<span class="math inline">\(0\)</span> at <span
+class="math inline">\(x=0\)</span>. This means that as <span
+class="math inline">\(x\)</span> tends to <span
+class="math inline">\(0\)</span>, the quotient will be tending to behave
+like <span class="math inline">\(2/\alpha\)</span>, where <span
+class="math inline">\(\alpha\)</span> is a very small quantity, perhaps
+negative, perhaps positive. So we can see that the absolute value of the
+quotient will be increasing without any upper bound. Or in other words,
+“<em>The limit doesn’t exist!</em>”.</p>
+<p>Lindsey Lohan’s character, Cady, comes to this conclusion after
+thinking hard and remembering back to her math classes, removing the
+vision of the twinkly-eyed dufus seated in the desk in front of hers,
+and instead recalling the lecture on the subject from her teacher,
+played by the actor and film’s writer, Tina Fey.</p>
+<figure>
+<img src="dufus.png" alt="The distraction" />
+<figcaption aria-hidden="true">The distraction</figcaption>
+</figure>
+<figure>
+<img src="teacher.png" alt="The realisation" />
+<figcaption aria-hidden="true">The realisation</figcaption>
+</figure>
+<p>A computer plot of the function, readily confirms these
+conclusions.</p>
+<figure>
+<img src="plot.png" alt="Plot of (\ln(1-x)-\sin(x))/(1-\cos^2(x))" />
+<figcaption aria-hidden="true">Plot of <span
+class="math inline">\((\ln(1-x)-\sin(x))/(1-\cos^2(x))\)</span></figcaption>
+</figure>
 </body>
 </html>
