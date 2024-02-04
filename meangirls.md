@@ -1,16 +1,17 @@
 ---
 title: Mean Girls math competition
+author: Killian O'Brien
 ---
 
 ## *Mean Girls*
 
 Friday's tutorial prompted a discussion of the math competition towards the end of the 2004 film [Mean Girls](https://www.imdb.com/title/tt0377092/), an American High School comedy.
 
-I haven't seen the film, but looked up the math competition scene.
+I haven't seen the film, but looked up the <a href="https://www.youtube.com/watch?v=qscPswsNzpw" target="_blank">math competition scene</a>.
 
 ![What is the limit?](meangirls.png)
 
-Thankfully, the mathematics in the movie is correct, if poorly type-set (functions names $\sin$, $\ln$, etc should be in normal upright font, not *italics*).
+Fortunately, the mathematics in the movie is correct, if poorly type-set (functions names $\sin$, $\ln$, etc should be in normal upright font, not *italics*). Unfortunately, the quiz announcer reads out the questions as "Find the limit of this equation.", which grates. It's not an equation is it -- I don't see an equals sign!
 
 Here's the limit
 $$\lim_{x \to 0}\left ( \frac{\ln(1-x) - \sin(x)}{1- \cos^2(x)}\right ).$$
@@ -41,6 +42,8 @@ Lindsey Lohan's character, Cady, comes to this conclusion after thinking hard an
 A computer plot of the function, readily confirms these conclusions. 
 
 ![Plot of $(\ln(1-x)-\sin(x))/(1-\cos^2(x))$](plot.png)
+
+We will be discussing these topics in detail later in the unit. 
 
 
 
