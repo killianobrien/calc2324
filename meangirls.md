@@ -33,7 +33,7 @@ $$\begin{align*}
 
 Now in the quotient on the right-hand side, the numerator evaluates to $-2$ at $x=0$ and the denominator evaluates to $0$ at $x=0$. This means that as $x$ tends to $0$, the quotient will be tending to behave like $2/\alpha$, where $\alpha$ is a very small quantity, perhaps negative, perhaps positive. So we can see that the absolute value of the quotient will be increasing without any upper bound. Or in other words, "*The limit doesn't exist!*".
 
-Lindsey Lohan's character, Cady, comes to this conclusion after thinking hard and remembering back to her math classes, removing the vision of the twinkly-eyed dufus seated in the desk in front of hers, and instead recalling the lecture on the subject from her teacher, played by the actor and film's writer, Tina Fey. 
+Lindsey Lohan's character, Cady, comes to this conclusion after thinking hard and remembering back to her math classes, removing the vision of the twinkly-eyed dufus seated at the desk in front of hers, and instead recalling the lecture on the subject from her teacher, played by the actor and film's writer, Tina Fey. 
 
 ![The distraction](dufus.png)
 
