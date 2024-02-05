@@ -8,6 +8,9 @@
   <title>Mean Girls math competition</title>
   <style>
     html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
       color: #1a1a1a;
       background-color: #fdfdfd;
     }
@@ -19,23 +22,17 @@
       padding-top: 50px;
       padding-bottom: 50px;
       hyphens: auto;
-      overflow-wrap: break-word;
+      word-wrap: break-word;
       text-rendering: optimizeLegibility;
       font-kerning: normal;
     }
     @media (max-width: 600px) {
       body {
         font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
+        padding: 1em;
       }
     }
     @media print {
-      html {
-        background-color: white;
-      }
       body {
         background-color: transparent;
         color: black;
@@ -59,10 +56,6 @@
       color: #1a1a1a;
     }
     img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -89,10 +82,9 @@
       color: #606060;
     }
     code {
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
       font-size: 85%;
       margin: 0;
-      hyphens: manual;
     }
     pre {
       margin: 1em 0;
@@ -101,7 +93,6 @@
     pre code {
       padding: 0;
       overflow: visible;
-      overflow-wrap: normal;
     }
     .sourceCode {
      background-color: transparent;
@@ -143,30 +134,20 @@
     #TOC li {
       list-style: none;
     }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
     #TOC a:not(:hover) {
       text-decoration: none;
     }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
+    ul.task-list{list-style: none;}
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital@0;1&display=swap" rel="stylesheet">
@@ -197,13 +178,6 @@
   }
 
   </style>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
-  type="text/javascript"></script>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -211,84 +185,32 @@
 <p class="author">Killian O’Brien</p>
 </header>
 <h2 id="mean-girls"><em>Mean Girls</em></h2>
-<p>Friday’s tutorial prompted a discussion of the math competition
-towards the end of the 2004 film <a
-href="https://www.imdb.com/title/tt0377092/">Mean Girls</a>, an American
-High School comedy.</p>
-<p>I haven’t seen the film, but looked up the
-<a href="https://www.youtube.com/watch?v=qscPswsNzpw" target="_blank">math
-competition scene</a>.</p>
+<p>Friday’s tutorial prompted a discussion of the math competition towards the end of the 2004 film <a href="https://www.imdb.com/title/tt0377092/">Mean Girls</a>, an American High School comedy.</p>
+<p>I haven’t seen the film, but looked up the <a href="https://www.youtube.com/watch?v=qscPswsNzpw" target="_blank">math competition scene</a>.</p>
 <figure>
-<img src="meangirls.png" alt="What is the limit?" />
-<figcaption aria-hidden="true">What is the limit?</figcaption>
+<img src="meangirls.png" alt="What is the limit?" /><figcaption aria-hidden="true">What is the limit?</figcaption>
 </figure>
-<p>Fortunately, the mathematics in the movie is correct, if poorly
-type-set (functions names <span class="math inline">\(\sin\)</span>,
-<span class="math inline">\(\ln\)</span>, etc should be in normal
-upright font, not <em>italics</em>). Unfortunately, the quiz announcer
-reads out the questions as “Find the limit of this equation.”, which
-grates. It’s not an equation is it – I don’t see an equals sign!</p>
-<p>Here’s the limit <span class="math display">\[\lim_{x \to 0}\left (
-\frac{\ln(1-x) - \sin(x)}{1- \cos^2(x)}\right ).\]</span></p>
-<p>The way to deal with the limit is not so much to start applying the
-<span class="math inline">\(\epsilon, \delta\)</span> definition
-directly, as this is a complicated compound function and the interplay
-between <span class="math inline">\(\epsilon\)</span> and <span
-class="math inline">\(\delta\)</span> values will be quite tricky to
-handle.</p>
-<p>Instead we would treat this problem with the aid of the theory of
-limits of compound functions, the derivative and in particular
-l’Hôpital’s rule.</p>
-<p>l’Hôpital’s rule is useful in situations where we have two functions
-<span class="math inline">\(f(x)\)</span> and <span
-class="math inline">\(g(x)\)</span> and <span
-class="math inline">\(f(0)=g(0)=0\)</span>, so that we cannot judge
-<span class="math inline">\(\lim_{x \to 0}f(x)/g(x)\)</span> by using a
-quotient rule for limits as the limit would seemingly be <span
-class="math inline">\(0/0\)</span>, which is meaningless. The rule says
-that we can judge the limit of their quotient by examining the limit of
-the quotient of their derivatives, i.e. <span
-class="math display">\[\lim_{x \to 0} \frac{f(x)}{g(x)}
-= \lim_{x \to 0} \frac{f&#39;(x)}{g&#39;(x)},\]</span> where <span
-class="math inline">\(f&#39;\)</span> and <span
-class="math inline">\(g&#39;\)</span> denote the derivatives.</p>
-<p>Applying this result here will say <span
-class="math display">\[\begin{align*}
+<p>Fortunately, the mathematics in the movie is correct, if poorly type-set (functions names <span class="math inline">\(\sin\)</span>, <span class="math inline">\(\ln\)</span>, etc should be in normal upright font, not <em>italics</em>). Unfortunately, the quiz announcer reads out the questions as “Find the limit of this equation.”, which grates. It’s not an equation is it – I don’t see an equals sign!</p>
+<p>Here’s the limit <span class="math display">\[\lim_{x \to 0}\left ( \frac{\ln(1-x) - \sin(x)}{1- \cos^2(x)}\right ).\]</span></p>
+<p>The way to deal with the limit is not so much to start applying the <span class="math inline">\(\epsilon, \delta\)</span> definition directly, as this is a complicated compound function and the interplay between <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\delta\)</span> values will be quite tricky to handle.</p>
+<p>Instead we would treat this problem with the aid of the theory of limits of compound functions, the derivative and in particular l’Hôpital’s rule.</p>
+<p>l’Hôpital’s rule is useful in situations where we have two functions <span class="math inline">\(f(x)\)</span> and <span class="math inline">\(g(x)\)</span> and <span class="math inline">\(f(0)=g(0)=0\)</span>, so that we cannot judge <span class="math inline">\(\lim_{x \to 0}f(x)/g(x)\)</span> by using a quotient rule for limits as the limit would seemingly be <span class="math inline">\(0/0\)</span>, which is meaningless. The rule says that we can judge the limit of their quotient by examining the limit of the quotient of their derivatives, i.e. <span class="math display">\[\lim_{x \to 0} \frac{f(x)}{g(x)}
+= \lim_{x \to 0} \frac{f&#39;(x)}{g&#39;(x)},\]</span> where <span class="math inline">\(f&#39;\)</span> and <span class="math inline">\(g&#39;\)</span> denote the derivatives.</p>
+<p>Applying this result here will say <span class="math display">\[\begin{align*}
 \lim_{x \to 0} \left ( \frac{\ln(1-x) - \sin(x)}{1- \cos^2(x)} \right )
-&amp;= \lim_{x \to 0} \left ( \frac{\frac{-1}{1-x} -
-\cos(x)}{-2\cos(x)\sin(x)}\right )
+&amp;= \lim_{x \to 0} \left ( \frac{\frac{-1}{1-x} - \cos(x)}{-2\cos(x)\sin(x)}\right )
 \end{align*}\]</span></p>
-<p>Now in the quotient on the right-hand side, the numerator evaluates
-to <span class="math inline">\(-2\)</span> at <span
-class="math inline">\(x=0\)</span> and the denominator evaluates to
-<span class="math inline">\(0\)</span> at <span
-class="math inline">\(x=0\)</span>. This means that as <span
-class="math inline">\(x\)</span> tends to <span
-class="math inline">\(0\)</span>, the quotient will be tending to behave
-like <span class="math inline">\(2/\alpha\)</span>, where <span
-class="math inline">\(\alpha\)</span> is a very small quantity, perhaps
-negative, perhaps positive. So we can see that the absolute value of the
-quotient will be increasing without any upper bound. Or in other words,
-“<em>The limit doesn’t exist!</em>”.</p>
-<p>Lindsey Lohan’s character, Cady, comes to this conclusion after
-thinking hard and remembering back to her math classes, removing the
-vision of the twinkly-eyed dufus seated in the desk in front of hers,
-and instead recalling the lecture on the subject from her teacher,
-played by the actor and film’s writer, Tina Fey.</p>
+<p>Now in the quotient on the right-hand side, the numerator evaluates to <span class="math inline">\(-2\)</span> at <span class="math inline">\(x=0\)</span> and the denominator evaluates to <span class="math inline">\(0\)</span> at <span class="math inline">\(x=0\)</span>. This means that as <span class="math inline">\(x\)</span> tends to <span class="math inline">\(0\)</span>, the quotient will be tending to behave like <span class="math inline">\(2/\alpha\)</span>, where <span class="math inline">\(\alpha\)</span> is a very small quantity, perhaps negative, perhaps positive. So we can see that the absolute value of the quotient will be increasing without any upper bound. Or in other words, “<em>The limit doesn’t exist!</em>”.</p>
+<p>Lindsey Lohan’s character, Cady, comes to this conclusion after thinking hard and remembering back to her math classes, removing the vision of the twinkly-eyed dufus seated at the desk in front of hers, and instead recalling the lecture on the subject from her teacher, played by the actor and film’s writer, Tina Fey.</p>
 <figure>
-<img src="dufus.png" alt="The distraction" />
-<figcaption aria-hidden="true">The distraction</figcaption>
+<img src="dufus.png" alt="The distraction" /><figcaption aria-hidden="true">The distraction</figcaption>
 </figure>
 <figure>
-<img src="teacher.png" alt="The realisation" />
-<figcaption aria-hidden="true">The realisation</figcaption>
+<img src="teacher.png" alt="The realisation" /><figcaption aria-hidden="true">The realisation</figcaption>
 </figure>
-<p>A computer plot of the function, readily confirms these
-conclusions.</p>
+<p>A computer plot of the function, readily confirms these conclusions.</p>
 <figure>
-<img src="plot.png" alt="Plot of (\ln(1-x)-\sin(x))/(1-\cos^2(x))" />
-<figcaption aria-hidden="true">Plot of <span
-class="math inline">\((\ln(1-x)-\sin(x))/(1-\cos^2(x))\)</span></figcaption>
+<img src="plot.png" alt="Plot of (\ln(1-x)-\sin(x))/(1-\cos^2(x))" /><figcaption aria-hidden="true">Plot of <span class="math inline">\((\ln(1-x)-\sin(x))/(1-\cos^2(x))\)</span></figcaption>
 </figure>
 <p>We will be discussing these topics in detail later in the unit.</p>
 </body>
